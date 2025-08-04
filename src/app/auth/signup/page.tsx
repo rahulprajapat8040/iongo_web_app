@@ -20,7 +20,6 @@ import { getOrCreateDeviceId, setAccessToken } from '@/lib/utils';
 import toast from 'react-hot-toast';
 import { apiRequest } from '@/helper/api.helper';
 import { useRouter } from 'next/navigation';
-import Cookies from 'js-cookie';
 import Link from 'next/link';
 
 type SignupFormValues = {

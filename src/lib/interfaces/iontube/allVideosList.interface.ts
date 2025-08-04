@@ -13,24 +13,21 @@ export interface VideoListInterface {
     duration: any
     status: string
     views: number
+    channelId: string
     createdAt: string
     updatedAt: string
     deletedAt: any
-    tags: Tag[]
+    channel: Channel
 }
 
-export interface Tag {
+export interface Channel {
     id: string
-    name: string
-    createdAt: string
-    updatedAt: string
-    deletedAt: any
-    VideoTag: VideoTag
-}
-
-export interface VideoTag {
-    videoId: string
-    tagId: string
+    channelName: string
+    channelTitle: string
+    description: string
+    image: string
+    bannerImage: string
+    ownerId: string
     createdAt: string
     updatedAt: string
     deletedAt: any

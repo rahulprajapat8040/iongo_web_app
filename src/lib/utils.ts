@@ -23,3 +23,5 @@ export const getOrCreateDeviceId = () => {
 export const getAccessToken = () => Cookies.get(ACCESS_TOKEN_KEY);
 export const setAccessToken = (token: string) => Cookies.set(ACCESS_TOKEN_KEY, token);
 export const removeAccessToken = () => Cookies.remove(ACCESS_TOKEN_KEY);
+export const getActiveChannel = () => Cookies.get("active_channel")
+export const setActiveChannel = (channeId: string) => Cookies.set("active_channel", channeId)

@@ -14,7 +14,7 @@ const Home = () => {
       name: "Video",
       description: "Watch, upload, and stream videos",
       icon: <Video size={32} />,
-      onClick: () => router.push('/iontube'),
+      onClick: () => router.push('/iontube/home'),
     },
     {
       name: "Meet",

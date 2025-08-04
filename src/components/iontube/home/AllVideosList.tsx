@@ -1,5 +1,6 @@
 import { VideoListInterface } from "@/lib/interfaces/iontube/allVideosList.interface";
 import VideoCard from "./VideoCard";
+import Link from "next/link";
 
 const AllVideosList = (
     { initialData }: { initialData: VideoListInterface[] }
@@ -9,10 +10,14 @@ const AllVideosList = (
             {
                 initialData.map((item) => {
                     return (
-                        <VideoCard
+                        <Link
                             key={item.id}
-                            data={item}
-                        />
+                            href={`/iontube/watch?v=${item.videoUrl}&vId=${item.id}`}
+                        >
+                            <VideoCard
+                                data={item}
+                            />
+                        </Link>
                     )
                 })
             }
