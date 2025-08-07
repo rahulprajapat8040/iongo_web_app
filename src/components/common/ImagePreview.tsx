@@ -12,7 +12,7 @@ interface ImagePreviewProps {
 
 // ✅ Add BASE_URL only if src is a relative path like 'uploads/...'
 const needsBaseUrl = (src: string) =>
-    !src.startsWith("http") && !src.startsWith("blob:");
+    src && !src.startsWith("http") && !src.startsWith("blob:");
 
 const ImagePreview = ({
     src,
@@ -25,13 +25,15 @@ const ImagePreview = ({
     const finalSrc = needsBaseUrl(src) ? `${BASE_URL}/${path}/${src}` : src;
 
     return (
-        <Image
-            src={finalSrc}
-            width={width}
-            height={height}
-            alt={alt}
-            className={className}
-        />
+        finalSrc && (
+            <Image
+                src={finalSrc}
+                width={width}
+                height={height}
+                alt={alt}
+                className={className}
+            />
+        )
     );
 };
 

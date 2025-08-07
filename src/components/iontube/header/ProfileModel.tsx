@@ -9,6 +9,7 @@ import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { PlusCircle, CheckCircle } from "lucide-react";
 import { useRouter } from "next/navigation";
+import CreateNewChannel from "../channel/CreateNewChannel";
 
 const ProfileModel = ({ user }: { user: UserInterface }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -49,14 +50,26 @@ const ProfileModel = ({ user }: { user: UserInterface }) => {
     return (
         <div className="relative" ref={dropdownRef}>
             <button onClick={() => setIsOpen(prev => !prev)} className="focus:outline-none">
-                <ImagePreview
-                    src={user.profilePhoto}
-                    alt={user.firstName}
-                    width={1000}
-                    height={1000}
-                    path="auth"
-                    className="w-10 h-10 object-cover rounded-full border border-gray-300"
-                />
+                {
+                    user.profilePhoto ? (
+                        <>
+                            <ImagePreview
+                                src={user.profilePhoto}
+                                alt={user.firstName}
+                                width={1000}
+                                height={1000}
+                                path="auth"
+                                className="w-10 h-10 object-cover rounded-full border border-gray-300"
+                            />
+                        </>
+                    ) : (
+                        <>
+                            <div className={`bg-blue-700 rounded-full h-10 w-10 text-center items-center justify-center flex text-2xl text-white font-medium`}>
+                                {user.firstName.charAt(0)}
+                            </div>
+                        </>
+                    )
+                }
             </button>
 
             {isOpen && (
@@ -105,12 +118,7 @@ const ProfileModel = ({ user }: { user: UserInterface }) => {
                         </div>
 
                         {/* Add New Channel */}
-                        <button
-                            onClick={handleAddChannel}
-                            className="mt-3 w-full flex items-center gap-2 text-sm text-blue-600 hover:text-blue-800 transition"
-                        >
-                            <PlusCircle className="w-5 h-5" /> Add New Channel
-                        </button>
+                        <CreateNewChannel />
                     </div>
                 </div>
             )}
