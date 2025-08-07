@@ -13,7 +13,7 @@ const Login = () => {
         password: ''
     })
 
-    const handleStateChange = (key: string, value: any) => {
+    const handleStateChange = (key: string, value: string) => {
         setStates((prev) => ({ ...prev, [key]: value }))
     }
 

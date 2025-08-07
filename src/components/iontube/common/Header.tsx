@@ -1,5 +1,4 @@
 'use client'
-import { usePathname } from "next/navigation";
 import { SidebarTrigger } from "../../ui/sidebar";
 import ProfileComponent from "../header/ProfileComponen";
 import Searchbar from "../header/Searchbar";

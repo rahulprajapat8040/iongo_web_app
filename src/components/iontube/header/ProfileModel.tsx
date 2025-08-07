@@ -1,13 +1,12 @@
 'use client';
 
 import ImagePreview from "@/components/common/ImagePreview";
-import { ChannelInterface } from "@/lib/interfaces/iontube/channelList.interface";
 import { UserInterface } from "@/lib/interfaces/user.interface";
 import { RootState } from "@/lib/redux/Store";
 import { getActiveChannel, setActiveChannel } from "@/lib/utils";
 import { useEffect, useRef, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { PlusCircle, CheckCircle } from "lucide-react";
+import { useSelector } from "react-redux";
+import { CheckCircle } from "lucide-react";
 import { useRouter } from "next/navigation";
 import CreateNewChannel from "../channel/CreateNewChannel";
 
@@ -23,11 +22,6 @@ const ProfileModel = ({ user }: { user: UserInterface }) => {
         setActiveChannel(channelId);
         setIsOpen(false);
         router.refresh(); // To re-trigger layout/server-side changes if needed
-    };
-
-    const handleAddChannel = () => {
-        setIsOpen(false);
-        router.push("/create-channel"); // Change this path to your channel creation route
     };
 
     // Close on outside click

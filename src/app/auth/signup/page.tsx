@@ -21,6 +21,7 @@ import toast from 'react-hot-toast';
 import { apiRequest } from '@/helper/api.helper';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { AxiosError } from 'axios';
 
 type SignupFormValues = {
     firstName: string;
@@ -241,10 +242,18 @@ const Signup = () => {
             }
 
             setStep((prev) => prev + 1);
-        } catch (err: any) {
+        } catch (err: unknown) {
+            if (err instanceof AxiosError && err.response?.data?.message) {
+                toast.error(err.response.data.message);
+            } else if (err instanceof Error) {
+                toast.error(err.message);
+            } else {
+                toast.error('Something went wrong');
+            }
             console.error('Step API error:', err);
-            toast.error(err?.response?.data?.message || 'Something went wrong');
         }
+
+
     };
 
 

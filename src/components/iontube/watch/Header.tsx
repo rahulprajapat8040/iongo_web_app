@@ -1,4 +1,3 @@
-import { SidebarTrigger } from "../../ui/sidebar";
 import ProfileComponent from "../header/ProfileComponen";
 import Searchbar from "../header/Searchbar";
 import SideDrawer from "./Drawer";

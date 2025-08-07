@@ -13,7 +13,7 @@ export interface ChannelInterface {
     ownerId: string
     createdAt: string
     updatedAt: string
-    deletedAt: any
+    deletedAt: string
 }
 
 export interface PageInfo {

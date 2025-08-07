@@ -2,7 +2,7 @@ import { apiRequest } from "@/helper/api.helper";
 import { Helper } from "@/helper/helper";
 import { RootState } from "@/lib/redux/Store";
 import { getActiveChannel } from "@/lib/utils";
-import { ArrowUpFromLine, Flag, MessageSquareWarning, SquarePlay, X } from "lucide-react";
+import { ArrowUpFromLine, MessageSquareWarning, SquarePlay, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { FormProvider, SubmitHandler, useForm, useFormContext } from "react-hook-form";

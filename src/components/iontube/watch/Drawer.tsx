@@ -1,18 +1,12 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import {
     Drawer,
-    DrawerClose,
     DrawerContent,
-    DrawerFooter,
-    DrawerHeader,
-    DrawerTitle,
     DrawerTrigger,
 } from "../../ui/drawer";
 import Link from "next/link";
 import {
-    Calendar,
     Clock,
     Film,
     Gamepad,
@@ -20,7 +14,6 @@ import {
     Home,
     Inbox,
     Music,
-    Search,
     Settings,
     TrendingUp,
     User,

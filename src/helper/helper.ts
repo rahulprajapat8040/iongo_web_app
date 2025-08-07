@@ -24,7 +24,7 @@ export class Helper {
 
                 video.src = URL.createObjectURL(file);
             } catch (error) {
-                reject("Error extracting video duration");
+                reject(`Error extracting video duration, ${error}`);
             }
         });
     };

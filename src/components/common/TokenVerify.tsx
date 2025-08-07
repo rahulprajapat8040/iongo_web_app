@@ -1,12 +1,10 @@
 'use client'
 
 import { apiRequest } from "@/helper/api.helper";
-import { UserInterface } from "@/lib/interfaces/user.interface";
 import { login, setUser } from "@/lib/redux/slices/auth.slice";
-import { RootState } from "@/lib/redux/Store";
 import { getAccessToken } from "@/lib/utils";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import Cookies from "js-cookie";
 import { setActiveChannel } from "@/lib/redux/slices/channel.slice";
 

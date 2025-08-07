@@ -4,11 +4,9 @@ import {
     Play,
     Pause,
     Volume2,
-    VolumeX,
     SkipForward,
 } from 'lucide-react';
-import { useRef, useState, useEffect } from 'react';
-import { BASE_URL } from '@/lib/utils';
+import { useRef, useState } from 'react';
 
 interface VideoPlayerProps {
     videoUrl: string;
@@ -19,7 +17,6 @@ const VideoPlayer = ({ videoUrl }: VideoPlayerProps) => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [progress, setProgress] = useState(0);
     const [volume, setVolume] = useState(1);
-    const [isMuted, setIsMuted] = useState(false);
 
     const togglePlay = () => {
         const video = videoRef.current;
@@ -56,17 +53,8 @@ const VideoPlayer = ({ videoUrl }: VideoPlayerProps) => {
             video.muted = newVolume === 0;
         }
         setVolume(newVolume);
-        setIsMuted(newVolume === 0);
     };
 
-    const toggleMute = () => {
-        const video = videoRef.current;
-        if (!video) return;
-
-        video.muted = !video.muted;
-        setIsMuted(video.muted);
-        setVolume(video.muted ? 0 : video.volume);
-    };
 
     return (
         <section className="w-full flex px-4 py-6 min-h-screen">

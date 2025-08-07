@@ -1,6 +1,6 @@
 'use client';
 
-import { PlusIcon, Radio, SquarePen, SquarePlay } from "lucide-react";
+import { PlusIcon, } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
 import UploadVideo from "./UploadVideo";

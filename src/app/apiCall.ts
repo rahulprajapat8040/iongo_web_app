@@ -6,7 +6,7 @@ export type HttpMethod = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
 
 interface ApiCallOptions {
     method?: HttpMethod;
-    data?: any;
+    data?: unknown;
     headers?: Record<string, string>;
     credentials?: RequestCredentials;
     next?: {
@@ -16,7 +16,7 @@ interface ApiCallOptions {
 
 }
 
-export const apiCall = async <T = any>(
+export const apiCall = async <T = unknown>(
     url: string,
     {
         method = 'GET',
@@ -47,8 +47,8 @@ export const apiCall = async <T = any>(
             throw new Error(result.message || 'API call failed');
         }
         return result.data as T;
-    } catch (error: any) {
-        console.error(`API Error: ${method} ${url}`, error.message);
+    } catch (error) {
+        console.error(`API Error: ${method} ${url}`, (error as Error).message);
         throw error;
     }
 };

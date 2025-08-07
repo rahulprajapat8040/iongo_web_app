@@ -1,7 +1,6 @@
 'use client'
 
 import {
-    Calendar,
     Clock,
     Film,
     Gamepad,
@@ -9,7 +8,6 @@ import {
     Home,
     Inbox,
     Music,
-    Search,
     Settings,
     TrendingUp,
     User,

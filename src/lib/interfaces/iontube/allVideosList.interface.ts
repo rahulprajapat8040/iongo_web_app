@@ -10,13 +10,13 @@ export interface VideoListInterface {
     uploadedById: string
     videoUrl: string
     thumbnailUrl: string
-    duration: any
+    duration: string
     status: string
     views: number
     channelId: string
     createdAt: string
     updatedAt: string
-    deletedAt: any
+    deletedAt: string
     channel: Channel
 }
 
@@ -30,7 +30,7 @@ export interface Channel {
     ownerId: string
     createdAt: string
     updatedAt: string
-    deletedAt: any
+    deletedAt: string
 }
 
 export interface PageInfo {
